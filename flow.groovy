@@ -1,5 +1,5 @@
 stage 'build image'
-node('docker') {
+node('dind') {
 	docker.withServer('tcp://127.0.0.1:1234'){
 	  docker.withRegistry('https://registry.hub.docker.com/', 'docker-registry-kmadel-login') {
 	  	
