@@ -11,9 +11,9 @@ node('dind') {
     		}, jenkinsEnterpriseBuildPush: {
     			stage 'build kmadel/jenkins-enterprise image'
 	  		git url: 'https://github.com/kmadel/jenkins-enterprise.git'
-	  		def jenkinsSlaveImage = docker.build "kmadel/jenkins-enterprise:latest"
+	  		def jenkinsEnterpriseImage = docker.build "kmadel/jenkins-enterprise:latest"
 	  		stage 'push kmadel/jenkins-enterprise image'
-	  		jenkinsSlaveImage.push 'latest'
+	  		jenkinsEnterpriseImage.push 'latest'
     		})
 	  }
 	}
